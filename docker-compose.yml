@@ -14,7 +14,7 @@ services:
       - "8010:8000"
     depends_on:
       - database
-    #      - rabbitmq
+      - rabbitmq
     networks:
       - networks_2
 
@@ -33,7 +33,7 @@ services:
       - "8020:8000"
     depends_on:
       - database
-    #      - rabbitmq
+      - rabbitmq
     networks:
       - networks_2
 
@@ -52,7 +52,7 @@ services:
       - "8030:8000"
     depends_on:
       - database
-    #      - rabbitmq
+      - rabbitmq
     networks:
       - networks_2
 
@@ -67,16 +67,16 @@ services:
     networks:
       - networks_2
 
-#  rabbitmq:
-#    container_name: rabbitmq
-#    image: rabbitmq:3.13.3-management
-#    env_file:
-#      - .env
-#    ports:
-#      - "15672:15672"
-#      - "5672:5672"
-#    networks:
-#      - networks
+  rabbitmq:
+    container_name: rabbitmq_2
+    image: rabbitmq:3.13.3-management
+    env_file:
+      - .env
+    ports:
+      - "15673:15672"
+      - "5673:5672"
+    networks:
+      - networks_2
 
 networks:
   networks_2:
